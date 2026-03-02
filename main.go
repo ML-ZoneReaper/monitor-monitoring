@@ -375,7 +375,7 @@ func (m *Monitor) sendLifecycleNotification(ctx context.Context, notifiers []Not
 	if isStartup {
 		sb.WriteString("*Status:* 🟢 STARTED\n")
 		sb.WriteString("*Monitoring:* ")
-		sb.WriteString(fmt.Sprintf("%d endpoint", len(m.config.Endpoints)))
+		fmt.Fprintf(&sb, "%d endpoint", len(m.config.Endpoints))
 		if len(m.config.Endpoints) != 1 {
 			sb.WriteString("s")
 		}
