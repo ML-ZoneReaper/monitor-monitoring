@@ -1,4 +1,4 @@
-# Monitor Monitoring ![Stars](https://img.shields.io/github/stars/eabykov/monitor-monitoring?style=flat) [![Go Report Card](https://goreportcard.com/badge/github.com/eabykov/monitor-monitoring)](https://goreportcard.com/report/github.com/eabykov/monitor-monitoring) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eabykov/monitor-monitoring?sort=semver) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/eabykov/monitor-monitoring) ![License](https://img.shields.io/github/license/eabykov/monitor-monitoring)
+# Monitor Monitoring ![Stars](https://img.shields.io/github/stars/ML-ZoneReaper/monitor-monitoring?style=flat) [![Go Report Card](https://goreportcard.com/badge/github.com/ML-ZoneReaper/monitor-monitoring)](https://goreportcard.com/report/github.com/ML-ZoneReaper/monitor-monitoring) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ML-ZoneReaper/monitor-monitoring?sort=semver) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ML-ZoneReaper/monitor-monitoring) ![License](https://img.shields.io/github/license/ML-ZoneReaper/monitor-monitoring)
 
 Lightweight monitoring solution in a single 7MB binary. Monitors HTTP/HTTPS endpoints, DNS records, and TCP ports with instant notifications via Telegram, Slack, Discord, or Mattermost.
 
@@ -51,7 +51,7 @@ Lightweight monitoring solution in a single 7MB binary. Monitors HTTP/HTTPS endp
 ### 2. Install
 
 ```bash
-git clone https://github.com/eabykov/monitor-monitoring.git
+git clone https://github.com/ML-ZoneReaper/monitor-monitoring.git
 cd monitor-monitoring
 go build -o monitor-monitoring .
 ```
