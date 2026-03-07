@@ -90,13 +90,13 @@ type NotifyEvent struct {
 }
 
 var notifyEventPool = sync.Pool{
-	New: func() interface{} {
+	New: func() any {
 		return &NotifyEvent{}
 	},
 }
 
 var copyBufferPool = sync.Pool{
-	New: func() interface{} {
+	New: func() any {
 		buf := make([]byte, 32*1024)
 		return &buf
 	},
@@ -111,7 +111,7 @@ type WebhookNotifier struct {
 	name       string
 	url        string
 	httpClient *http.Client
-	formatFunc func(string) map[string]interface{}
+	formatFunc func(string) map[string]any
 }
 
 func (w *WebhookNotifier) Send(ctx context.Context, message string) error {
@@ -282,8 +282,8 @@ func createNotifiers(cfg *Config, client *http.Client) ([]Notifier, error) {
 				name:       "Telegram",
 				url:        fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", cfg.TelegramToken),
 				httpClient: client,
-				formatFunc: func(msg string) map[string]interface{} {
-					return map[string]interface{}{
+				formatFunc: func(msg string) map[string]any {
+					return map[string]any{
 						"chat_id":              cfg.TelegramChatID,
 						"text":                 msg,
 						"parse_mode":           "Markdown",
@@ -300,8 +300,8 @@ func createNotifiers(cfg *Config, client *http.Client) ([]Notifier, error) {
 				name:       "Mattermost",
 				url:        cfg.MattermostURL,
 				httpClient: client,
-				formatFunc: func(msg string) map[string]interface{} {
-					return map[string]interface{}{"text": msg}
+				formatFunc: func(msg string) map[string]any {
+					return map[string]any{"text": msg}
 				},
 			}, nil
 		},
@@ -313,8 +313,8 @@ func createNotifiers(cfg *Config, client *http.Client) ([]Notifier, error) {
 				name:       "Slack",
 				url:        cfg.SlackURL,
 				httpClient: client,
-				formatFunc: func(msg string) map[string]interface{} {
-					return map[string]interface{}{"text": msg, "mrkdwn": true}
+				formatFunc: func(msg string) map[string]any {
+					return map[string]any{"text": msg, "mrkdwn": true}
 				},
 			}, nil
 		},
@@ -326,8 +326,8 @@ func createNotifiers(cfg *Config, client *http.Client) ([]Notifier, error) {
 				name:       "Discord",
 				url:        cfg.DiscordURL,
 				httpClient: client,
-				formatFunc: func(msg string) map[string]interface{} {
-					return map[string]interface{}{"content": strings.ReplaceAll(msg, "*", "**")}
+				formatFunc: func(msg string) map[string]any {
+					return map[string]any{"content": strings.ReplaceAll(msg, "*", "**")}
 				},
 			}, nil
 		},
