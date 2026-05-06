@@ -1,6 +1,6 @@
 # Monitor Monitoring ![Stars](https://img.shields.io/github/stars/ML-ZoneReaper/monitor-monitoring?style=flat) [![Go Report Card](https://goreportcard.com/badge/github.com/ML-ZoneReaper/monitor-monitoring)](https://goreportcard.com/report/github.com/ML-ZoneReaper/monitor-monitoring) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ML-ZoneReaper/monitor-monitoring?sort=semver) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ML-ZoneReaper/monitor-monitoring) ![License](https://img.shields.io/github/license/ML-ZoneReaper/monitor-monitoring)
 
-Lightweight monitoring tool (~6MB binary). Checks HTTP/HTTPS endpoints, DNS records, and TCP ports. Sends alerts via Telegram, Slack, Discord, or Mattermost.
+Lightweight monitoring tool. Checks HTTP/HTTPS endpoints, DNS records, and TCP ports. Sends alerts via Telegram, Slack, Discord, or Mattermost.
 
 ## Features
 
